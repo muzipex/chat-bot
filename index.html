@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omni AI - Chat Support</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <style>
+        /* Custom Styling */
+        body {
+            background-color: #121212;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            color: #00d8ff;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 600px;
+            height: 550px;
+            background-color: #1c1c1c;
+            border-radius: 12px;
+            box-shadow: 0px 4px 25px rgba(0, 255, 255, 0.4);
+            position: relative;
+        }
+
+        .footer {
+            color: #ccc;
+            font-size: 14px;
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+
+        .footer a {
+            color: #00d8ff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Friendly Styling */
+        @media (max-width: 576px) {
+            .header {
+                font-size: 28px;
+            }
+
+            .chat-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container text-center">
+        <!-- Header Section -->
+        <div class="header">
+            Omni AI - Your Digital Assistant
+        </div>
+
+        <!-- Chat Widget -->
+        <div class="chat-container" id="chat-widget-container"></div>
+
+        <!-- Footer -->
+        <div class="footer">
+            Powered by <a href="https://n8n.io/" target="_blank">n8n</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS & Chat Widget JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+        createChat({
+            webhookUrl: 'https://musipex.app.n8n.cloud/webhook/f8158f83-ea38-4184-aa46-6a8e947720a6',
+            title: 'Omni AI Support', // Optional title
+            botName: 'Omni AI', // Optional bot name
+            triggerButtonText: 'Chat with Omni AI', // Text on the button to trigger chat
+        });
+    </script>
+</body>
+
+</html>
